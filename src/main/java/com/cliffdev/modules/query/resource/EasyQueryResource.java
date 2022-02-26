@@ -76,8 +76,7 @@ public class EasyQueryResource {
     }
 
 
-    public R<Pagination<EasyQueryTableDTO>> query(EasyQueryTableReqDTO queryTableReq) {
-        R<Pagination<EasyQueryTableDTO>> result = R.ok();
+    public Pagination<EasyQueryTableDTO> query(EasyQueryTableReqDTO queryTableReq) {
         QueryWrapper<EasyQueryTable> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("del_flag", 0);
 
@@ -101,8 +100,7 @@ public class EasyQueryResource {
         }
         pagination.setTotal(pageList.getTotal());
         pagination.setData(list);
-        result.setData(pagination);
-        return result;
+        return pagination;
     }
 
     public EasyQueryTable getTableInfo(String tableId) {

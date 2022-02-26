@@ -51,7 +51,7 @@ public class EasyQueryTable implements Serializable {
             return null;
         }
         for(EasyQueryField item :queryFields){
-            if(item.getName().equalsIgnoreCase(fieldName)){
+            if(item.getLabel().equalsIgnoreCase(fieldName)){
                 return item;
             }
         }
