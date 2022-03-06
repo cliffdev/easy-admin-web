@@ -5,26 +5,25 @@ import lombok.ToString;
 import java.util.HashMap;
 
 @ToString
-public class SimpleQueryReqDTO extends HashMap {
+public class SimpleQueryReqDTO extends HashMap<String,String> {
 
     public int getPageIndex() {
-        return Integer.parseInt(this.get("pageIndex").toString());
+        return Integer.parseInt(this.get("pageIndex"));
     }
     public int getPageSize() {
-        return Integer.parseInt(this.get("pageSize").toString());
+        return Integer.parseInt(this.get("pageSize"));
     }
 
     public String getOrderBy() {
-        return this.get("orderBy") == null ? "" : this.get("orderBy").toString();
+        return this.get("orderBy");
     }
 
     public String getOrderField() {
-        return this.get("orderField") == null ? "" : this.get("orderField").toString();
+        return this.get("orderField");
     }
 
     public String getQueryTableId() {
-        return this.get("queryTableId") == null ? "" : this.get("queryTableId").toString();
+        return this.get("queryTableId");
     }
-
 
 }

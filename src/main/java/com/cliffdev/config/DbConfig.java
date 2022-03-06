@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DbConfig {
+
     @Bean
     public PaginationInterceptor paginationInterceptor() {
         PaginationInterceptor paginationInterceptor = new PaginationInterceptor();

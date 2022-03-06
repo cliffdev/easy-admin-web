@@ -16,12 +16,12 @@ public class EasyStaticDictService {
     @Autowired
     private EasyDictDataMapper dictDataMapper;
 
-    public List<DictValueDTO> getDict(String dictName){
+    public List<DictValueDTO> getDict(String dictName) {
         QueryWrapper<EasyDictData> qw = new QueryWrapper<>();
-        qw.eq("del_flag",0).eq("dict_type",dictName).eq("status",0).orderByAsc("dict_sort");
-        List<EasyDictData> easyDictDataList =  dictDataMapper.selectList(qw);
+        qw.eq("del_flag", 0).eq("dict_type", dictName).eq("status", 0).orderByAsc("dict_sort");
+        List<EasyDictData> easyDictDataList = dictDataMapper.selectList(qw);
         List<DictValueDTO> dictValueDTOList = new ArrayList<>();
-        for(EasyDictData item : easyDictDataList){
+        for (EasyDictData item : easyDictDataList) {
             DictValueDTO dto = new DictValueDTO();
             dto.setId(item.getDictValue());
             dto.setText(item.getDictLabel());

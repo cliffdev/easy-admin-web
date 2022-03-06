@@ -35,7 +35,12 @@ public class R<T> implements Serializable {
     public static <T> R<T> ok(T data) {
         return restResult(data, SUCCESS, "操作成功");
     }
-
+    public static <T> R<T> result(boolean flag) {
+        if(flag) {
+            return restResult(null, SUCCESS, "操作成功");
+        }
+        return restResult(null, FAIL, "操作失败");
+    }
     public static <T> R<T> ok(T data, String msg) {
         return restResult(data, SUCCESS, msg);
     }
@@ -45,7 +50,7 @@ public class R<T> implements Serializable {
     }
 
     public static <T> R<T> fail() {
-        return restResult(null, FAIL, null);
+        return restResult(null, FAIL, "fail");
     }
 
     public static <T> R<T> fail(String msg) {

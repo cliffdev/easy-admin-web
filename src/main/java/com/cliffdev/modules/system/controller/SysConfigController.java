@@ -25,7 +25,7 @@ public class SysConfigController {
         return R.ok(configService.get(configKey));
     }
 
-    @ApiOperation(value = "查询字典")
+    @ApiOperation(value = "新增或修改系统配置")
     @PostMapping("{configKey}")
     @ResponseBody
     public R addOrUpdate(HttpServletRequest request, @RequestBody SysConfigDTO configDTO, @ApiParam("configKey") @Validated @PathVariable String configKey) throws Exception {
